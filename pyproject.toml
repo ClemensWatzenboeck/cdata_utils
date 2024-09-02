@@ -1,0 +1,60 @@
+[project]
+name = "cdata-utils"
+version = "0.1"
+requires-python = ">=3.7"
+description = "Utiliy functions for cleaning, preprocessing and analyzing (time-to-event prediction, feature selection, inter-reader comparison, ... ) of clinical data of patients suffering from PSVD. "
+readme = "README.md"
+authors = [
+    { name = "Clemens Watzenböck", email = "clemens.watzenboeck@meduniwien.ac.at"},
+    { name = "Department of Radiology; Medical University of Vienna" }
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Healthcare Industry",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+keywords = [
+    'Cox model', "PSVD"
+]
+dependencies = [
+    "numpy",
+    "pandas",
+    "matplotlib",
+    "scipy",
+    "scikit-learn",
+    "scikit-survival", 
+    "tqdm",
+    "python-dotenv",
+    "openpyxl",
+    "lifelines",
+    "PyYAML",
+    "pingouin",
+    "ipykernel",
+]
+
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "ruff",
+    "pre-commit"
+]
+
+[build-system]
+requires = ["setuptools>=67.8.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.codespell]
+skip = '.git,*.pdf,*.svg'
+#
+# ignore-words-list = ''
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+
+[project.urls]
+homepage = "https://github.com/ClemensWatzenboeck/cdata_utils"
+

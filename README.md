@@ -1,85 +1,45 @@
-![Build Status](https://gitlab.com/pages/sphinx/badges/master/build.svg)
+# cdata_utils
 
----
+This repository contains the python code which as used to clean, preprocess and analyze clinical data of patients suffering from Porto-Sinusoidal Vascular Disorder (PSVD). 
 
-Example [sphinx] documentation website using GitLab Pages.
 
-Learn more about GitLab Pages at https://pages.gitlab.io and the official
-documentation http://doc.gitlab.com/ee/pages/README.html.
 
----
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+**Note:** Since the patient data is confidential, we show here only the scripts and jupyter notebooks which were used to analyze the data. The data itself is not available.
 
-- [GitLab CI](#gitlab-ci)
-- [Requirements](#requirements)
-- [Building locally](#building-locally)
-- [GitLab User or Group Pages](#gitlab-user-or-group-pages)
-- [Did you fork this project?](#did-you-fork-this-project)
-- [Troubleshooting](#troubleshooting)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+## Installation with conda:
+The majority of the code is in the python package `cdata_utils`. It can simply be installed with `pip install -e . `. 
+If you use a package mananger, like anaconda you might want to use the following commands.
 
-## GitLab CI
+```bash
+# make new env: 
+conda create --name py3-10-cdata_utils -c conda-forge python=3.10
+conda activate py3-10-cdata_utils
 
-This project's static Pages are built by [GitLab CI][ci], following the steps
-defined in [`.gitlab-ci.yml`](.gitlab-ci.yml):
+# After that the other requirements should be handeled by the `pyproject.toml`
+pip install -e . 
 
 ```
-image: alpine
 
-pages:
-  script:
-  - apk --no-cache add py-pip python-dev
-  - pip install sphinx
-  - apk --no-cache add make
-  - make html
-  - mv _build/html/ public/
-  artifacts:
-    paths:
-    - public
-  only:
-  - master
+
+## More notes on the environemnt: 
+We also provide a frozen environment, which can be used to recreate the environment *exactly* in the form we used to analyze the data.
+See [env/requirements.yml](env/enironment.yml). 
+
+
+It was created with: 
+```bash 
+conda env export -n py3-10-cdata_utils > ./env/environment.yml
 ```
 
-## Requirements
+And could be used to recreate the environment with
 
-- [Sphinx][]
+```bash
+conda env create -f ./env/environment.yml
+```
 
-## Building locally
 
-To work locally with this project, you'll have to follow the steps below:
 
-1. Fork, clone or download this project
-1. [Install][] Sphinx
-1. Generate the documentation: `make`
 
-The generated HTML will be located in the location specified by `conf.py`,
-in this case `doxygen/documentation/html`.
 
-## GitLab User or Group Pages
-
-To use this project as your user/group website, you will need one additional
-step: just rename your project to `namespace.gitlab.io`, where `namespace` is
-your `username` or `groupname`. This can be done by navigating to your
-project's **Settings**.
-
-Read more about [user/group Pages][userpages] and [project Pages][projpages].
-
-## Did you fork this project?
-
-If you forked this project for your own use, please go to your project's
-**Settings** and remove the forking relationship, which won't be necessary
-unless you want to contribute back to the upstream project.
-
-## Troubleshooting
-
-1. Example problem
-
-    Example solution
-
-[ci]: https://about.gitlab.com/gitlab-ci/
-[userpages]: http://doc.gitlab.com/ee/pages/README.html#user-or-group-pages
-[projpages]: http://doc.gitlab.com/ee/pages/README.html#project-pages
