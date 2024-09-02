@@ -1,7 +1,6 @@
 # cdata_utils
 
-This repository contains the python code which as used to clean, preprocess and analyze clinical data of patients suffering from Porto-Sinusoidal Vascular Disorder (PSVD). 
-
+This repository contains the python code which as used to clean, preprocess and analyze clinical data of patients suffering from Porto-Sinusoidal Vascular Disorder (PSVD). The analysis of the PSVD data (related to reference ...) was done with [this version](https://github.com/ClemensWatzenboeck/cdata_utils/commit/0986fc8d49c3ac1e1aa7734ec807dcea48c2877c) of the code.
 
 
 
