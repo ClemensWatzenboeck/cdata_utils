@@ -9,7 +9,7 @@ This repository contains the python code which as used to clean, preprocess and 
 
 
 ## Installation with conda:
-The majority of the code is in the python package `cdata_utils`. It can simply be installed with `pip install -e . `. 
+The majority of the code is in the python package `cdata_utils`.
 If you use a package mananger, like anaconda you might want to use the following commands.
 
 ```bash
@@ -25,7 +25,7 @@ pip install -e .
 
 ## More notes on the environemnt: 
 We also provide a frozen environment, which can be used to recreate the environment *exactly* in the form we used to analyze the data.
-See [env/requirements.yml](env/enironment.yml). 
+See [./env/environment.yml](./env/environment.yml). 
 
 
 It was created with: 
